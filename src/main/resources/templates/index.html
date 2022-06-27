@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http:www.thymeleaf.org">
+	<head>
+		<title>Search</title>
+	</head>
+	<body>
+	<form th:action="@{/search}" method="post" th:object="${searchbook}">
+		<label for="bookcode">Bookcode:		</label>
+		<input type="text" id="bookcode" th:name="bookcode" th:id="bookcode" th:value="${searchbook.bookcode}"/>
+		
+		<label for="title">Title:		</label>
+		<input type="text" id="title" th:field="*{title}"/>
+		
+		<label for="author">Author:		</label>
+		<input type="text" id="author" th:field="*{author}"/>
+		
+		<label for="category">Category:		</label>
+		<input type="text" id="category" th:field="*{category}"/>
+		
+		<input type="submit" value="Search"/>
+	</form>
+	</body>
+</html>
